@@ -1,0 +1,22 @@
+{
+  "name": "HidGamepad",
+  "provider": "Contoso Devices",
+  "manufacturer": "Contoso Devices LLC",
+  "version": "0.1.0",
+  "class": "HIDClass",
+  "classGuid": "{745a17a0-74d3-11d0-b6fe-00a0c90e91ab}",
+  "framework": "umdf",
+  "serviceName": "WdsHidGamepad",
+  "catalogFile": "HidGamepad.cat",
+  "files": [
+    { "source": "HidGamepad.Driver.dll" }
+  ],
+  "models": [
+    {
+      "name": "Contoso Virtual Gamepad (SDK sample)",
+      "hardwareIds": ["Root\\ContosoVirtualGamepad"],
+      "compatibleIds": ["*WdsHidGamepad"]
+    }
+  ],
+  "wdfLibraryVersion": "2.15.0"
+}

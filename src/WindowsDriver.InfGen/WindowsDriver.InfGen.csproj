@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Description>infgen — generates driver INF files from a JSON manifest and validates existing INF files. Ships as a dotnet tool (`dotnet tool install WindowsDriver.InfGen`).</Description>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>infgen</ToolCommandName>
+    <PackageOutputPath>../../artifacts/</PackageOutputPath>
+    <PackageId>WindowsDriver.InfGen</PackageId>
+    <PackageTags>windows;driver;inf;wdk;installer;codegen</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DriverTemplate</RootNamespace>
+    <Description>DriverTemplate — a Windows Driver SDK driver.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WindowsDriver.Sdk" Version="SDK_VERSION" />
+    <PackageReference Include="WindowsDriver.Interop" Version="SDK_VERSION" />
+  </ItemGroup>
+
+</Project>

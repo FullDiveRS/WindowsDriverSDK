@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Windows Driver SDK contributors",
+  "classifications": ["Windows", "Driver", "UMDF", "Solution"],
+  "description": "A complete driver solution skeleton: driver project, test project, InfGen manifest and build script.",
+  "name": "Windows Driver Solution (Windows Driver SDK)",
+  "identity": "WindowsDriver.Sdk.Driver.Solution",
+  "groupIdentity": "WindowsDriver.Sdk.Driver.Solution",
+  "shortName": "driver-solution",
+  "sourceName": "DriverTemplate",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "sdkVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "0.1.0-preview.1",
+      "replaces": "SDK_VERSION"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "**/*.sln"
+          ]
+        }
+      ]
+    }
+  ]
+}
