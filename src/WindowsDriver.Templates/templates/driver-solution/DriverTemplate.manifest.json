@@ -1,0 +1,21 @@
+{
+  // InfGen manifest — generate the INF with:
+  //   dotnet tool install WindowsDriver.InfGen
+  //   infgen generate --manifest DriverTemplate.manifest.json
+  "name": "DriverTemplate",
+  "provider": "Your Company",
+  "version": "0.1.0",
+  "class": "Unknown",
+  "classGuid": "{4d36e97b-e325-11ce-bfc1-08002be10318}",
+  "framework": "umdf",
+  "serviceName": "DriverTemplateService",
+  "files": [
+    { "source": "DriverTemplate.dll" }
+  ],
+  "models": [
+    {
+      "name": "DriverTemplate Device",
+      "hardwareIds": ["Root\\DriverTemplate"]
+    }
+  ]
+}

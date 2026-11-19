@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>VirtualSensor.Driver</RootNamespace>
+    <Description>Sample: virtual sensor device (3-axis accelerometer + ambient light simulator, IOCTL + event queue) built on WindowsDriver.Sdk.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../src/WindowsDriver.Sdk/WindowsDriver.Sdk.csproj" />
+    <ProjectReference Include="../../../src/WindowsDriver.Interop/WindowsDriver.Interop.csproj" />
+  </ItemGroup>
+
+</Project>

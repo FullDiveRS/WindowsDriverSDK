@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Windows Driver SDK contributors",
+  "classifications": ["Windows", "Driver", "UMDF"],
+  "description": "A driver project for the Windows Driver SDK: an IDriver entry point, a DeviceBase subclass with IOCTL handling, and an InfGen manifest.",
+  "name": "Windows Driver (Windows Driver SDK)",
+  "identity": "WindowsDriver.Sdk.Driver.Project",
+  "groupIdentity": "WindowsDriver.Sdk.Driver.Umdf",
+  "shortName": "driver-umdf",
+  "sourceName": "DriverTemplate",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "sdkVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "0.1.0-preview.1",
+      "replaces": "SDK_VERSION"
+    }
+  }
+}

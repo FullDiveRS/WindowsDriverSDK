@@ -1,0 +1,22 @@
+{
+  "name": "VirtualAudio",
+  "provider": "Contoso Devices",
+  "manufacturer": "Contoso Devices LLC",
+  "version": "0.1.0",
+  "class": "Media",
+  "classGuid": "{4d36e96c-e325-11ce-bfc1-08002be10318}",
+  "framework": "umdf",
+  "serviceName": "WdsVirtualAudio",
+  "catalogFile": "VirtualAudio.cat",
+  "files": [
+    { "source": "VirtualAudio.Driver.dll" }
+  ],
+  "models": [
+    {
+      "name": "Contoso Virtual Audio Device (SDK sample)",
+      "hardwareIds": ["Root\\ContosoVirtualAudio"],
+      "compatibleIds": ["*WdsVirtualAudio"]
+    }
+  ],
+  "wdfLibraryVersion": "2.15.0"
+}

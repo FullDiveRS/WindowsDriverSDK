@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Native interop layer of the Windows Driver SDK: UMDF shim contracts (C header + managed bootstrap), KMDF control-plane client (CreateFile/DeviceIoControl P/Invoke and wire structs), and the Win32 P/Invoke declarations used by both.</Description>
+    <PackageId>WindowsDriver.Interop</PackageId>
+    <PackageTags>windows;driver;umdf;kmdf;interop;hostfxr;ioctl</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <!-- ManagedDriverBootstrap uses function pointers to talk to the native shim. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../WindowsDriver.Sdk/WindowsDriver.Sdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

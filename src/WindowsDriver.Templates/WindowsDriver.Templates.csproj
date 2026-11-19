@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>dotnet new templates for the Windows Driver SDK: a UMDF-style driver project, an xUnit test project wired to the test host, and a complete driver solution.</Description>
+    <PackageId>WindowsDriver.Templates</PackageId>
+    <PackageTags>windows;driver;templates;dotnet-new;umdf</PackageTags>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- Template sources are content, not compiled code. -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>$(NoWarn);NU5128;NU5119</NoWarn>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates/**" Pack="true" PackagePath="content/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

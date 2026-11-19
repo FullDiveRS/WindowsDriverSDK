@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "Windows Driver SDK contributors",
+  "classifications": ["Windows", "Driver", "Testing"],
+  "description": "An xUnit test project wired to the Windows Driver SDK test host — runs driver logic without Windows or a device.",
+  "name": "Windows Driver Tests (Windows Driver SDK)",
+  "identity": "WindowsDriver.Sdk.Driver.Tests",
+  "groupIdentity": "WindowsDriver.Sdk.Driver.Tests",
+  "shortName": "driver-tests",
+  "sourceName": "DriverTemplate.Tests",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "sdkVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "0.1.0-preview.1",
+      "replaces": "SDK_VERSION"
+    }
+  }
+}

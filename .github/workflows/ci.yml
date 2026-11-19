@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  logic:
+    name: Build, test, pack (ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Test
+        run: dotnet test --no-build -c Release
+
+      - name: Pack
+        run: dotnet pack --no-build -c Release -o artifacts/
+
+      - name: InfGen smoke test
+        run: |
+          dotnet tool install --prerelease --tool-path ./tools-out --add-source ./artifacts WindowsDriver.InfGen
+          ./tools-out/infgen generate --manifest samples/VirtualAudio/manifest.json --out /tmp/virtualaudio.inf
+          ./tools-out/infgen validate --inf /tmp/virtualaudio.inf
+
+      - name: Template smoke test
+        run: |
+          dotnet new install ./artifacts/WindowsDriver.Templates.*.nupkg
+          mkdir -p /tmp/tpl && pushd /tmp/tpl
+          dotnet new driver-solution -n SmokeDriver
+          cd SmokeDriver && dotnet new sln -n SmokeDriver
+          dotnet sln add SmokeDriver/SmokeDriver.csproj SmokeDriver.Tests/SmokeDriver.Tests.csproj
+          dotnet restore --source "${{ github.workspace }}/artifacts" --source https://api.nuget.org/v3/index.json
+          dotnet test
+          popd
+
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: artifacts/*.nupkg
+
+  windows:
+    name: Build samples (windows)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build + test
+        run: |
+          dotnet build -c Release
+          dotnet test --no-build -c Release
+
+      # NOTE: GitHub-hosted Windows runners do not ship the WDK, so the native
+      # KMDF shim and real INF signing cannot run here. Compile shim/WdsKmdfShim
+      # and run InfVerif/SignTool on a machine (or private runner) with the WDK.
+      # See docs/inf-and-signing.md for the full pipeline.

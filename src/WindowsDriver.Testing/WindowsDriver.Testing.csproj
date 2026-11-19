@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Test-time helpers for the Windows Driver SDK: an in-memory TestDriverHost that runs driver logic without Windows or a device, a controllable FakeTimeProvider, captured logging and a fake registry. Framework-agnostic (works with xUnit, NUnit, MSTest).</Description>
+    <PackageId>WindowsDriver.Testing</PackageId>
+    <PackageTags>windows;driver;testing;unit-test;mock;umdf;kmdf</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../WindowsDriver.Sdk/WindowsDriver.Sdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

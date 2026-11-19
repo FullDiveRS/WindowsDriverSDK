@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>VirtualAudio.Driver</RootNamespace>
+    <Description>Sample: virtual audio device (PCM ring buffer, format negotiation, volume, IOCTL contract) built on WindowsDriver.Sdk.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../src/WindowsDriver.Sdk/WindowsDriver.Sdk.csproj" />
+    <ProjectReference Include="../../../src/WindowsDriver.Interop/WindowsDriver.Interop.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Core runtime of the Windows Driver SDK for .NET: driver/device lifecycle, IO queues, IOCTL handling, NTSTATUS, logging, plus the Audio, HID, Sensor and Serial device-class modules. Driver logic is written in C# and hosted either by the bundled test host, a UMDF shim, or the KMDF control plane.</Description>
+    <PackageId>WindowsDriver.Sdk</PackageId>
+    <PackageTags>windows;driver;umdf;kmdf;wdm;audio;hid;sensor;serial;ioctl;wdf</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>

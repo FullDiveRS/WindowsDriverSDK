@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <Description>Unit tests for the Windows Driver SDK core runtime, interop contracts and InfGen.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/WindowsDriver.Sdk/WindowsDriver.Sdk.csproj" />
+    <ProjectReference Include="../../src/WindowsDriver.Interop/WindowsDriver.Interop.csproj" />
+    <ProjectReference Include="../../src/WindowsDriver.Testing/WindowsDriver.Testing.csproj" />
+    <ProjectReference Include="../../src/WindowsDriver.InfGen/WindowsDriver.InfGen.csproj" />
+  </ItemGroup>
+
+</Project>
